@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "pages": [
+    {
+      "image_path": "1.png",
+      "staff_count": 8,
+      "bar_line_count": 17,
+      "staff_line_count": 40,
+      "expected_vertical_lines": 17,
+      "possible_vertical_lines": 33
+    },
+    {
+      "image_path": "2.png",
+      "staff_count": 8,
+      "bar_line_count": 9,
+      "staff_line_count": 40,
+      "expected_vertical_lines": 9,
+      "possible_vertical_lines": 25
+    },
+    {
+      "image_path": "3.png",
+      "staff_count": 8,
+      "bar_line_count": 7,
+      "staff_line_count": 35,
+      "expected_vertical_lines": 7,
+      "possible_vertical_lines": 21
+    },
+    {
+      "image_path": "4.png",
+      "staff_count": 8,
+      "bar_line_count": 7,
+      "staff_line_count": 40,
+      "expected_vertical_lines": 7,
+      "possible_vertical_lines": 23
+    }
+  ]
+}
