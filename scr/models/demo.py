@@ -1,11 +1,10 @@
-from scr.models.dataset_manager import DatasetManager
-from scr.models.page import ChunkSlice, PageRecord, StaffSlice
+from scr.models.page import ChunkSlice, PageDataset, PageRecord, StaffSlice
 
 
 def run_demo() -> None:
-    manager = DatasetManager()
+    dataset = PageDataset()
     page = PageRecord(image_path="data/page_1.png", staff_count=2, bar_line_count=8)
-    manager.add_page(page)
+    dataset.add_page(page)
 
     staff = StaffSlice(
         staff_index=0,
@@ -16,7 +15,7 @@ def run_demo() -> None:
         y_end=180,
         image_path="data/processed/page_1/staff_0.png",
     )
-    manager.add_staff_slice(page.image_path, staff)
+    page.add_staff_slice(staff)
 
     chunk = ChunkSlice(
         chunk_index=0,
@@ -28,10 +27,10 @@ def run_demo() -> None:
         y_end=180,
         image_path="data/processed/page_1/staff_0/chunk_0.png",
     )
-    manager.add_chunk_slice(page.image_path, 0, chunk)
+    staff.add_chunk(chunk)
 
-    payload = manager.dataset.to_dict()
-    restored = manager.dataset.from_dict(payload)
+    payload = dataset.to_dict()
+    restored = dataset.from_dict(payload)
 
     assert restored.pages[0].image_path == page.image_path
     assert restored.pages[0].staff_slices[0].chunks[0].image_path == chunk.image_path

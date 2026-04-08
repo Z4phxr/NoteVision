@@ -2,6 +2,8 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Set, SupportsInt, cast
 
+from scr.config.paths import DATA_DIR
+
 
 @dataclass
 class ChunkSlice:
@@ -211,33 +213,6 @@ class PageRecord:
 
         return results
 
-    @staticmethod
-    def _prompt_int(message: str) -> int:
-        """Prompt until the user enters a non-negative integer."""
-        while True:
-            raw = input(message).strip()
-            try:
-                value = int(raw)
-            except ValueError:
-                print("Please enter a valid integer.")
-                continue
-            if value < 0:
-                print("Please enter a non-negative integer.")
-                continue
-            return value
-
-    @classmethod
-    def from_prompt(cls, relative_image_path: str) -> "PageRecord":
-        """Interactively collect metadata for a new page and return a PageRecord."""
-        print(f"\nNew page found: {relative_image_path}")
-        staff_count = cls._prompt_int("  Staff count: ")
-        bar_line_count = cls._prompt_int("  Bar line count: ")
-        return cls(
-            image_path=relative_image_path,
-            staff_count=staff_count,
-            bar_line_count=bar_line_count,
-        )
-
     def to_dict(self) -> Dict[str, Any]:
         return {
             "image_path": self.image_path,
@@ -277,6 +252,7 @@ class PageDataset:
 
     pages: List[PageRecord] = field(default_factory=list)
     schema_version: int = 1
+    data_dir: Path = field(default_factory=lambda: DATA_DIR)
 
     def add_page(self, page: PageRecord) -> None:
         self.pages.append(page)
@@ -287,15 +263,17 @@ class PageDataset:
     def known_paths(self) -> set[str]:
         return {page.image_path for page in self.pages}
 
-    def find_new_paths(self, data_dir: Path, extensions: Set[str]) -> List[str]:
-        """Return relative image paths in data_dir not yet present in this dataset."""
-        if not data_dir.exists():
+    def find_new_paths(self, extensions: Optional[Set[str]] = None) -> List[str]:
+        """Return relative image paths not yet present in this dataset."""
+        if not self.data_dir.exists():
             return []
+        if extensions is None:
+            extensions = {".png", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff"}
         known = self.known_paths()
         new_paths: List[str] = []
-        for path in sorted(data_dir.rglob("*")):
+        for path in sorted(self.data_dir.rglob("*")):
             if path.is_file() and path.suffix.lower() in extensions:
-                relative = path.relative_to(data_dir).as_posix()
+                relative = path.relative_to(self.data_dir).as_posix()
                 if relative not in known:
                     new_paths.append(relative)
         return new_paths
@@ -311,4 +289,3 @@ class PageDataset:
         pages_data = payload.get("pages", [])
         pages = [PageRecord.from_dict(item) for item in pages_data]
         return cls(pages=pages, schema_version=int(payload.get("schema_version", 1)))
-
