@@ -1,20 +1,10 @@
 import json
-from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import List, Optional
 
 import cv2
 
-
-@dataclass(frozen=True)
-class ParamSet:
-    """Single Hough/Canny parameter combination."""
-
-    threshold: int
-    min_len_ratio: float
-    max_gap: int
-    canny_low: int
-    canny_high: int
+from scr.models.analysis import ParamSet, ParamSetResult, PhotoResult
 
 
 class ParamAnalyzer:
@@ -57,7 +47,7 @@ class ParamAnalyzer:
     ) -> Path:
         """Evaluate all ParamSets on all pages and save results as JSON.
 
-        Output contains per-image results and per-ParamSet summary counts.
+        Output contains per-ParamSet results with per-image details and summary counts.
         """
         from scr.io.dataset_store import DatasetJsonStore
 
@@ -66,60 +56,56 @@ class ParamAnalyzer:
         param_combos = cls.create_param_set() if params is None else params
         total_pages = len(dataset.pages)
 
-        per_image = []
-        summary = []
+        results: List[ParamSetResult] = []
 
         output_path.parent.mkdir(parents=True, exist_ok=True)
-        for param_set in param_combos:
+        for param_index, param_set in enumerate(param_combos, start=1):
             analyzer = cls(param_set)
-            matched = 0
-            evaluated = 0
+            photo_results: List[PhotoResult] = []
 
-            for page in dataset.pages:
+            for page_index, page in enumerate(dataset.pages, start=1):
                 image_path = Path(page.image_path)
                 if not image_path.is_absolute():
                     image_path = data_dir / image_path
 
                 image = cv2.imread(str(image_path))
                 if image is None:
-                    per_image.append({
-                        "param_set": asdict(param_set),
-                        "image_path": page.image_path,
-                        "expected_lines": page.staff_line_count,
-                        "merged_count": None,
-                        "matched": False,
-                        "status": "missing_image",
-                    })
+                    photo_results.append(PhotoResult(
+                        path=page.image_path,
+                        found_lines=None,
+                        target_lines=page.staff_line_count,
+                        matched=False,
+                    ))
+                    print(
+                        f"[{param_index}/{len(param_combos)}] "
+                        f"{page_index}/{total_pages} {page.image_path}: missing image"
+                    )
                     continue
 
                 merged = page.detect_merged_lines(image, analyzer.param_set)
-                merged_count = len(merged)
-                expected = page.staff_line_count
-                is_match = merged_count == expected
+                found_lines = len(merged)
+                target_lines = page.staff_line_count
+                matched = found_lines == target_lines
 
-                if is_match:
-                    matched += 1
-                evaluated += 1
+                photo_results.append(PhotoResult(
+                    path=page.image_path,
+                    found_lines=found_lines,
+                    target_lines=target_lines,
+                    matched=matched,
+                ))
+                print(
+                    f"[{param_index}/{len(param_combos)}] "
+                    f"{page_index}/{total_pages} {page.image_path}: "
+                    f"{found_lines}/{target_lines}"
+                )
 
-                per_image.append({
-                    "param_set": asdict(param_set),
-                    "image_path": page.image_path,
-                    "expected_lines": expected,
-                    "merged_count": merged_count,
-                    "matched": is_match,
-                    "status": "ok",
-                })
-
-            summary.append({
-                "param_set": asdict(param_set),
-                "matched": matched,
-                "evaluated": evaluated,
-                "total_pages": total_pages,
-            })
+            results.append(ParamSetResult(
+                param_set=param_set,
+                photos=photo_results,
+            ))
 
         payload = {
-            "per_image": per_image,
-            "summary": summary,
+            "results": [result.to_dict() for result in results],
         }
         output_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
         return output_path
