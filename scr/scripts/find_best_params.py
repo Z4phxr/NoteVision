@@ -1,11 +1,11 @@
-from scr.config.paths import DATA_DIR, DATASET_PATH
+from scr.config.paths import CLEAN_DIR, DATASET_PATH
 from scr.pipeline.param_analyzer import ParamAnalyzer
 
 
 def run() -> None:
     """Find best parameter sets and save them to settings.json."""
     best_params = ParamAnalyzer.find_best_param_sets(
-        data_dir=DATA_DIR,
+        data_dir=CLEAN_DIR,
         dataset_path=DATASET_PATH,
         max_photos=3,
         save=True,

@@ -181,7 +181,9 @@ class ParamAnalyzer:
                 break
 
         if save:
-            settings_path = resolved_data_dir / "settings.json"
+            from scr.config.paths import SETTINGS_PATH
+
+            settings_path = SETTINGS_PATH
             payload = [asdict(param_set) for param_set in candidates]
             settings_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
             print(f"Saved {len(candidates)} param combos to: {settings_path}")
@@ -234,11 +236,11 @@ class ParamAnalyzer:
         data_dir: Optional[Path] = None,
     ) -> None:
         """Render top ParamSet detections for all dataset pages."""
-        from scr.config.paths import DATASET_PATH, DATA_DIR
+        from scr.config.paths import CLEAN_DIR, DATASET_PATH
         from scr.io.dataset_store import DatasetJsonStore
 
         resolved_dataset_path = dataset_path or DATASET_PATH
-        resolved_data_dir = data_dir or DATA_DIR
+        resolved_data_dir = data_dir or CLEAN_DIR
         dataset = DatasetJsonStore.load(resolved_dataset_path)
         dataset.data_dir = resolved_data_dir
 
@@ -285,11 +287,11 @@ class ParamAnalyzer:
         top_k: int = 3,
     ) -> None:
         """Render first `top_k` ParamSets from settings.json on all dataset pages."""
-        from scr.config.paths import DATASET_PATH, DATA_DIR
+        from scr.config.paths import CLEAN_DIR, DATASET_PATH
         from scr.io.dataset_store import DatasetJsonStore
 
         resolved_dataset_path = dataset_path or DATASET_PATH
-        resolved_data_dir = data_dir or DATA_DIR
+        resolved_data_dir = data_dir or CLEAN_DIR
         dataset = DatasetJsonStore.load(resolved_dataset_path)
         dataset.data_dir = resolved_data_dir
 
@@ -345,12 +347,12 @@ class ParamAnalyzer:
         data_dir: Optional[Path] = None,
     ) -> Path:
         """Render all ranked ParamSets on one photo and save the outputs."""
-        from scr.config.paths import DATASET_PATH, DATA_DIR
+        from scr.config.paths import CLEAN_DIR, DATASET_PATH
         from scr.io.dataset_store import DatasetJsonStore
         from scr.models.page import PageRecord
 
         resolved_dataset_path = dataset_path or DATASET_PATH
-        resolved_data_dir = data_dir or DATA_DIR
+        resolved_data_dir = data_dir or CLEAN_DIR
         dataset = DatasetJsonStore.load(resolved_dataset_path)
         dataset.data_dir = resolved_data_dir
 

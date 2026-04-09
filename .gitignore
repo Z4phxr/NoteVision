@@ -31,4 +31,6 @@ Piano/ParametersSearch/preview_lines.png
 
 #data
 Piano/ParametersSearch/data/
+data/raw/
+data/clean/
 

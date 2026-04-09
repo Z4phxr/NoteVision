@@ -4,7 +4,7 @@ from typing import Any, Dict, Iterable, List, Optional, Set, SupportsInt, cast
 
 import numpy as np
 
-from scr.config.paths import DATA_DIR
+from scr.config.paths import CLEAN_DIR
 
 
 @dataclass
@@ -292,7 +292,7 @@ class PageDataset:
 
     pages: List[PageRecord] = field(default_factory=list)
     schema_version: int = 1
-    data_dir: Path = field(default_factory=lambda: DATA_DIR)
+    data_dir: Path = field(default_factory=lambda: CLEAN_DIR)
 
     def add_page(self, page: PageRecord) -> None:
         self.pages.append(page)

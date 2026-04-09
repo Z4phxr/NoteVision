@@ -17,6 +17,7 @@ Current practical focus is robust detection of **treble clef** and **bass clef**
 2. Run parameter search / filtering to find good `ParamSet` configurations.
 3. Save filtered parameter sets to `data/settings.json`.
 4. Visualize selected parameter sets on all pages.
+5. Keep source photos in `data/clean/` (raw imports go through `data/raw/`).
 
 ## Project Structure
 
@@ -24,7 +25,7 @@ Current practical focus is robust detection of **treble clef** and **bass clef**
 - `scr/pipeline/` - image processing and parameter search
 - `scr/io/` - dataset storage and sync utilities
 - `scr/config/paths.py` - paths to `data/` assets
-- `data/` - dataset and images
+- `data/` - dataset files, analysis outputs, and `clean/` photos
 - `assets/` - generated previews
 
 ## Documentation Index

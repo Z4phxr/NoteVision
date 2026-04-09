@@ -34,7 +34,7 @@ This folder contains core data models used across the project.
     - Useful for later symbol-level processing.
   - `PageDataset`
     - Container for all `PageRecord` items.
-    - Supports operations like adding pages, listing known paths, and finding new image paths in `data/`.
+    - Supports operations like adding pages, listing known paths, and finding new image paths in `data/clean/`.
 
 ## Model relationships
 

@@ -6,7 +6,7 @@ This folder contains runnable entry points for dataset preparation, parameter an
 
 - `dataset_sync.py`
   - Command: `python -m scr.scripts.dataset_sync`
-  - Scans `data/` for new images, asks for metadata, and updates `data/dataset.json`.
+  - Scans `data/clean/` for new images, asks for metadata, and updates `data/dataset.json`.
 
 - `param_analysis.py`
   - Command: `python -m scr.scripts.param_analysis`
@@ -28,6 +28,10 @@ This folder contains runnable entry points for dataset preparation, parameter an
   - Command:
     - `python -m scr.scripts.visualize_photo_params <photo_path>`
   - Draws all ranked parameter sets from `param_analysis.json` for one selected photo.
+
+- `reindex_raw_photos.py`
+  - Command: `python -m scr.scripts.reindex_raw_photos`
+  - Moves all photos from `data/raw` to `data/clean` and renames them sequentially from `10`.
 
 ## Typical Run Order
 
