@@ -1,10 +1,24 @@
 # NoteVision
 
-Work in progress
-
 This project uses computer vision to extract musical notes from sheet music and convert them into MIDI format.
 
-## Structure
+## Project Overview
+
+NoteVision is an Optical Music Recognition (OMR) project focused on:
+- detecting music notation from sheet images,
+- building structured metadata for pages/staves/symbols,
+- preparing data for downstream MIDI conversion.
+
+Current practical focus is robust detection of **treble clef** and **bass clef**, with parameter search pipelines used to tune line detection quality.
+
+## Current Workflow
+
+1. Sync page metadata and labels into `data/dataset.json`.
+2. Run parameter search / filtering to find good `ParamSet` configurations.
+3. Save filtered parameter sets to `data/settings.json`.
+4. Visualize selected parameter sets on all pages.
+
+## Project Structure
 
 - `scr/models/` - domain models and dataset manager
 - `scr/pipeline/` - image processing and parameter search
@@ -13,13 +27,10 @@ This project uses computer vision to extract musical notes from sheet music and 
 - `data/` - dataset and images
 - `assets/` - generated previews
 
+## Documentation Index
 
-## Scripts
-
-```powershell
-python -m scr.scripts.dataset_sync
-python -m scr.scripts.param_analysis
-```
+- Models documentation: [`scr/models/MODELS.md`](scr/models/MODELS.md)
+- Scripts documentation: [`scr/scripts/SCRIPTS.md`](scr/scripts/SCRIPTS.md)
 
 ## Goals
 
@@ -35,3 +46,14 @@ Currently working on note detection and extraction (OMR stage).
 - Improve accuracy with ML models
 - Real-time processing
 - Interactive piano learning interface
+
+## Dataset and License (DeepScoresV2)
+
+The model currently being developed (treble and bass clef detection) is trained using the DeepScoresV2 dataset.
+
+- Dataset is publicly available.
+- License: Creative Commons Attribution 4.0 (CC BY 4.0).
+- Original dataset source: [Zenodo - DeepScoresV2](https://zenodo.org/records/4012193).
+- Original project repository (tools/annotations related to DeepScoresV2): [GitHub - obb_anns](https://github.com/yvan674/obb_anns).
+
+The dataset is used in compliance with the license terms, and dataset authors are credited according to the official attribution guidelines.

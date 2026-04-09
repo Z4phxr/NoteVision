@@ -19,26 +19,18 @@
     },
     {
       "image_path": "3.png",
-      "staff_count": 8,
-      "bar_line_count": 7,
-      "staff_line_count": 40,
-      "possible_vertical_lines": 23,
+      "staff_count": 10,
+      "bar_line_count": 24,
+      "staff_line_count": 50,
+      "possible_vertical_lines": 44,
       "staff_slices": []
     },
     {
       "image_path": "4.png",
-      "staff_count": 8,
-      "bar_line_count": 7,
-      "staff_line_count": 40,
-      "possible_vertical_lines": 23,
-      "staff_slices": []
-    },
-    {
-      "image_path": "5.png",
-      "staff_count": 12,
-      "bar_line_count": 21,
-      "staff_line_count": 60,
-      "possible_vertical_lines": 45,
+      "staff_count": 14,
+      "bar_line_count": 33,
+      "staff_line_count": 70,
+      "possible_vertical_lines": 61,
       "staff_slices": []
     }
   ]

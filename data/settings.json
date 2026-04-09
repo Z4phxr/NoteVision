@@ -1,845 +1,163 @@
-{
-  "BestHorizontalParameters": [
-    {
-      "threshold": 30,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 20,
-      "canny_high": 100
-    },
-    {
-      "threshold": 30,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 20,
-      "canny_high": 150
-    },
-    {
-      "threshold": 30,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 20,
-      "canny_high": 200
-    },
-    {
-      "threshold": 30,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 30,
-      "canny_high": 100
-    },
-    {
-      "threshold": 30,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 30,
-      "canny_high": 150
-    },
-    {
-      "threshold": 30,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 30,
-      "canny_high": 200
-    },
-    {
-      "threshold": 30,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 50,
-      "canny_high": 100
-    },
-    {
-      "threshold": 30,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 50,
-      "canny_high": 150
-    },
-    {
-      "threshold": 30,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 50,
-      "canny_high": 200
-    },
-    {
-      "threshold": 30,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 20,
-      "canny_high": 100
-    },
-    {
-      "threshold": 30,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 20,
-      "canny_high": 150
-    },
-    {
-      "threshold": 30,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 20,
-      "canny_high": 200
-    },
-    {
-      "threshold": 30,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 30,
-      "canny_high": 100
-    },
-    {
-      "threshold": 30,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 30,
-      "canny_high": 150
-    },
-    {
-      "threshold": 30,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 30,
-      "canny_high": 200
-    },
-    {
-      "threshold": 30,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 50,
-      "canny_high": 100
-    },
-    {
-      "threshold": 30,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 50,
-      "canny_high": 150
-    },
-    {
-      "threshold": 30,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 50,
-      "canny_high": 200
-    },
-    {
-      "threshold": 30,
-      "min_len_ratio": 0.5,
-      "max_gap": 30,
-      "canny_low": 50,
-      "canny_high": 100
-    },
-    {
-      "threshold": 30,
-      "min_len_ratio": 0.5,
-      "max_gap": 30,
-      "canny_low": 50,
-      "canny_high": 150
-    },
-    {
-      "threshold": 30,
-      "min_len_ratio": 0.5,
-      "max_gap": 30,
-      "canny_low": 50,
-      "canny_high": 200
-    },
-    {
-      "threshold": 40,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 20,
-      "canny_high": 100
-    },
-    {
-      "threshold": 40,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 20,
-      "canny_high": 150
-    },
-    {
-      "threshold": 40,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 20,
-      "canny_high": 200
-    },
-    {
-      "threshold": 40,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 30,
-      "canny_high": 100
-    },
-    {
-      "threshold": 40,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 30,
-      "canny_high": 150
-    },
-    {
-      "threshold": 40,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 30,
-      "canny_high": 200
-    },
-    {
-      "threshold": 40,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 50,
-      "canny_high": 100
-    },
-    {
-      "threshold": 40,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 50,
-      "canny_high": 150
-    },
-    {
-      "threshold": 40,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 50,
-      "canny_high": 200
-    },
-    {
-      "threshold": 40,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 20,
-      "canny_high": 100
-    },
-    {
-      "threshold": 40,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 20,
-      "canny_high": 150
-    },
-    {
-      "threshold": 40,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 20,
-      "canny_high": 200
-    },
-    {
-      "threshold": 40,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 30,
-      "canny_high": 100
-    },
-    {
-      "threshold": 40,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 30,
-      "canny_high": 150
-    },
-    {
-      "threshold": 40,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 30,
-      "canny_high": 200
-    },
-    {
-      "threshold": 40,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 50,
-      "canny_high": 100
-    },
-    {
-      "threshold": 40,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 50,
-      "canny_high": 150
-    },
-    {
-      "threshold": 40,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 50,
-      "canny_high": 200
-    },
-    {
-      "threshold": 50,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 20,
-      "canny_high": 100
-    },
-    {
-      "threshold": 50,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 20,
-      "canny_high": 150
-    },
-    {
-      "threshold": 50,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 20,
-      "canny_high": 200
-    },
-    {
-      "threshold": 50,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 30,
-      "canny_high": 100
-    },
-    {
-      "threshold": 50,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 30,
-      "canny_high": 150
-    },
-    {
-      "threshold": 50,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 30,
-      "canny_high": 200
-    },
-    {
-      "threshold": 50,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 50,
-      "canny_high": 100
-    },
-    {
-      "threshold": 50,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 50,
-      "canny_high": 150
-    },
-    {
-      "threshold": 50,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 50,
-      "canny_high": 200
-    },
-    {
-      "threshold": 50,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 20,
-      "canny_high": 100
-    },
-    {
-      "threshold": 50,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 20,
-      "canny_high": 150
-    },
-    {
-      "threshold": 50,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 20,
-      "canny_high": 200
-    },
-    {
-      "threshold": 50,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 30,
-      "canny_high": 100
-    },
-    {
-      "threshold": 50,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 30,
-      "canny_high": 150
-    },
-    {
-      "threshold": 50,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 30,
-      "canny_high": 200
-    },
-    {
-      "threshold": 50,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 50,
-      "canny_high": 100
-    },
-    {
-      "threshold": 50,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 50,
-      "canny_high": 150
-    },
-    {
-      "threshold": 50,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 50,
-      "canny_high": 200
-    },
-    {
-      "threshold": 60,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 20,
-      "canny_high": 100
-    },
-    {
-      "threshold": 60,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 20,
-      "canny_high": 150
-    },
-    {
-      "threshold": 60,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 20,
-      "canny_high": 200
-    },
-    {
-      "threshold": 60,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 30,
-      "canny_high": 100
-    },
-    {
-      "threshold": 60,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 30,
-      "canny_high": 150
-    },
-    {
-      "threshold": 60,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 30,
-      "canny_high": 200
-    },
-    {
-      "threshold": 60,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 50,
-      "canny_high": 100
-    },
-    {
-      "threshold": 60,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 50,
-      "canny_high": 150
-    },
-    {
-      "threshold": 60,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 50,
-      "canny_high": 200
-    },
-    {
-      "threshold": 60,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 30,
-      "canny_high": 100
-    },
-    {
-      "threshold": 60,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 30,
-      "canny_high": 150
-    },
-    {
-      "threshold": 60,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 30,
-      "canny_high": 200
-    },
-    {
-      "threshold": 60,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 50,
-      "canny_high": 100
-    },
-    {
-      "threshold": 60,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 50,
-      "canny_high": 150
-    },
-    {
-      "threshold": 60,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 50,
-      "canny_high": 200
-    },
-    {
-      "threshold": 80,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 20,
-      "canny_high": 100
-    },
-    {
-      "threshold": 80,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 20,
-      "canny_high": 150
-    },
-    {
-      "threshold": 80,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 20,
-      "canny_high": 200
-    },
-    {
-      "threshold": 80,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 30,
-      "canny_high": 100
-    },
-    {
-      "threshold": 80,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 30,
-      "canny_high": 150
-    },
-    {
-      "threshold": 80,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 30,
-      "canny_high": 200
-    },
-    {
-      "threshold": 80,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 50,
-      "canny_high": 100
-    },
-    {
-      "threshold": 80,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 50,
-      "canny_high": 150
-    },
-    {
-      "threshold": 80,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 50,
-      "canny_high": 200
-    },
-    {
-      "threshold": 80,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 20,
-      "canny_high": 100
-    },
-    {
-      "threshold": 80,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 20,
-      "canny_high": 150
-    },
-    {
-      "threshold": 80,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 20,
-      "canny_high": 200
-    },
-    {
-      "threshold": 80,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 50,
-      "canny_high": 100
-    },
-    {
-      "threshold": 80,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 50,
-      "canny_high": 150
-    },
-    {
-      "threshold": 80,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 50,
-      "canny_high": 200
-    },
-    {
-      "threshold": 80,
-      "min_len_ratio": 0.5,
-      "max_gap": 30,
-      "canny_low": 30,
-      "canny_high": 100
-    },
-    {
-      "threshold": 80,
-      "min_len_ratio": 0.5,
-      "max_gap": 30,
-      "canny_low": 30,
-      "canny_high": 150
-    },
-    {
-      "threshold": 80,
-      "min_len_ratio": 0.5,
-      "max_gap": 30,
-      "canny_low": 30,
-      "canny_high": 200
-    },
-    {
-      "threshold": 80,
-      "min_len_ratio": 0.5,
-      "max_gap": 40,
-      "canny_low": 20,
-      "canny_high": 100
-    },
-    {
-      "threshold": 80,
-      "min_len_ratio": 0.5,
-      "max_gap": 40,
-      "canny_low": 20,
-      "canny_high": 150
-    },
-    {
-      "threshold": 80,
-      "min_len_ratio": 0.5,
-      "max_gap": 40,
-      "canny_low": 20,
-      "canny_high": 200
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 20,
-      "canny_high": 100
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 20,
-      "canny_high": 150
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 20,
-      "canny_high": 200
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 30,
-      "canny_high": 100
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 30,
-      "canny_high": 150
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 30,
-      "canny_high": 200
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 50,
-      "canny_high": 100
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 50,
-      "canny_high": 150
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.3,
-      "max_gap": 10,
-      "canny_low": 50,
-      "canny_high": 200
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.3,
-      "max_gap": 20,
-      "canny_low": 50,
-      "canny_high": 100
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.3,
-      "max_gap": 20,
-      "canny_low": 50,
-      "canny_high": 150
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.3,
-      "max_gap": 20,
-      "canny_low": 50,
-      "canny_high": 200
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 20,
-      "canny_high": 100
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 20,
-      "canny_high": 150
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 20,
-      "canny_high": 200
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 30,
-      "canny_high": 100
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 30,
-      "canny_high": 150
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 30,
-      "canny_high": 200
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 50,
-      "canny_high": 100
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 50,
-      "canny_high": 150
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.4,
-      "max_gap": 20,
-      "canny_low": 50,
-      "canny_high": 200
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.5,
-      "max_gap": 30,
-      "canny_low": 20,
-      "canny_high": 100
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.5,
-      "max_gap": 30,
-      "canny_low": 20,
-      "canny_high": 150
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.5,
-      "max_gap": 30,
-      "canny_low": 20,
-      "canny_high": 200
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.5,
-      "max_gap": 30,
-      "canny_low": 30,
-      "canny_high": 100
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.5,
-      "max_gap": 30,
-      "canny_low": 30,
-      "canny_high": 150
-    },
-    {
-      "threshold": 100,
-      "min_len_ratio": 0.5,
-      "max_gap": 30,
-      "canny_low": 30,
-      "canny_high": 200
-    }
-  ],
-  "BestVerticalParameters": []
-}
+[
+  {
+    "threshold": 100,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 50,
+    "canny_high": 100
+  },
+  {
+    "threshold": 100,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 50,
+    "canny_high": 120
+  },
+  {
+    "threshold": 100,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 50,
+    "canny_high": 150
+  },
+  {
+    "threshold": 100,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 50,
+    "canny_high": 200
+  },
+  {
+    "threshold": 100,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 50,
+    "canny_high": 250
+  },
+  {
+    "threshold": 120,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 50,
+    "canny_high": 80
+  },
+  {
+    "threshold": 120,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 50,
+    "canny_high": 100
+  },
+  {
+    "threshold": 120,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 50,
+    "canny_high": 120
+  },
+  {
+    "threshold": 120,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 50,
+    "canny_high": 150
+  },
+  {
+    "threshold": 120,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 50,
+    "canny_high": 200
+  },
+  {
+    "threshold": 120,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 70,
+    "canny_high": 80
+  },
+  {
+    "threshold": 150,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 50,
+    "canny_high": 80
+  },
+  {
+    "threshold": 150,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 50,
+    "canny_high": 100
+  },
+  {
+    "threshold": 150,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 50,
+    "canny_high": 120
+  },
+  {
+    "threshold": 150,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 50,
+    "canny_high": 150
+  },
+  {
+    "threshold": 150,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 50,
+    "canny_high": 200
+  },
+  {
+    "threshold": 150,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 50,
+    "canny_high": 250
+  },
+  {
+    "threshold": 150,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 70,
+    "canny_high": 80
+  },
+  {
+    "threshold": 150,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 70,
+    "canny_high": 100
+  },
+  {
+    "threshold": 150,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 70,
+    "canny_high": 120
+  },
+  {
+    "threshold": 150,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 70,
+    "canny_high": 150
+  },
+  {
+    "threshold": 150,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 70,
+    "canny_high": 200
+  },
+  {
+    "threshold": 150,
+    "min_len_ratio": 0.3,
+    "max_gap": 20,
+    "canny_low": 70,
+    "canny_high": 250
+  }
+]

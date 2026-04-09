@@ -29,3 +29,6 @@ Thumbs.db
 # Local generated outputs
 Piano/ParametersSearch/preview_lines.png
 
+#data
+Piano/ParametersSearch/data/
+

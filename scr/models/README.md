@@ -9,9 +9,3 @@ This package contains domain models for page metadata and image slices.
 - `PageDataset`: container for page records.
 - `DatasetManager`: helper for attaching slices to a dataset.
 
-## Demo
-
-```powershell
-python -m scr.models.demo
-```
-
