@@ -13,10 +13,12 @@ This project uses computer vision to extract musical notes from sheet music and 
 - `data/` - dataset and images
 - `assets/` - generated previews
 
-## Run
+
+## Scripts
 
 ```powershell
-python -m scr.io.dataset_create
+python -m scr.scripts.dataset_sync
+python -m scr.scripts.param_analysis
 ```
 
 ## Goals

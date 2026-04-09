@@ -2,6 +2,8 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Set, SupportsInt, cast
 
+import numpy as np
+
 from scr.config.paths import DATA_DIR
 
 
@@ -121,13 +123,19 @@ class PageRecord:
     def add_staff_slice(self, staff_slice: StaffSlice) -> None:
         self.staff_slices.append(staff_slice)
 
+    COLORS = [
+        (255, 0, 0),
+        (255, 165, 0),
+        (255, 255, 0),
+        (0, 255, 0),
+        (0, 0, 255),
+    ]
+
     def detect_merged_lines(self, image, params_set) -> List:
-        """Detect merged horizontal lines using ParamAnalyzer logic."""
+        """Detect merged horizontal lines using ParamSet values."""
         import math
 
         import cv2
-
-        from scr.pipeline.param_analyzer import ParamAnalyzer
 
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         edges = cv2.Canny(gray, params_set.canny_low, params_set.canny_high, apertureSize=3)
@@ -140,21 +148,53 @@ class PageRecord:
             maxLineGap=params_set.max_gap,
         )
 
-        return ParamAnalyzer.normalize_horizontal_lines(raw_lines)
+        return self.normalize_horizontal_lines(raw_lines)
 
     def draw_lines(self, image, params_set):
         """Detect and draw merged horizontal lines on a copy of the image."""
         import cv2
 
-        from scr.pipeline.param_analyzer import ParamAnalyzer
-
         merged = self.detect_merged_lines(image, params_set)
         image_with_lines = image.copy()
         for i, line in enumerate(merged):
             x1, y1, x2, y2 = line[0]
-            color = ParamAnalyzer.COLORS[i % len(ParamAnalyzer.COLORS)]
+            color = self.COLORS[i % len(self.COLORS)]
             cv2.line(image_with_lines, (x1, y1), (x2, y2), color, 1)
         return image_with_lines, merged
+
+    @staticmethod
+    def normalize_horizontal_lines(lines, threshold: int = 5) -> List:
+        """Merge nearby horizontal lines and normalize all to a global x-range."""
+        if lines is None or lines.size == 0:
+            return []
+
+        normalized = []
+        for line_coords in lines:
+            x1, y1, x2, y2 = line_coords[0]
+            if x1 > x2:
+                x1, y1, x2, y2 = x2, y2, x1, y1
+            normalized.append((x1, y1, x2, y2))
+        normalized.sort(key=lambda ln: (ln[1] + ln[3]) / 2)
+
+        global_x1 = min(ln[0] for ln in normalized)
+        global_x2 = max(ln[2] for ln in normalized)
+
+        merged = []
+        used = [False] * len(normalized)
+        for i, curr in enumerate(normalized):
+            if used[i]:
+                continue
+            avg_y_curr = (curr[1] + curr[3]) / 2
+            for j, cmp in enumerate(normalized):
+                if i == j or used[j]:
+                    continue
+                if abs(avg_y_curr - (cmp[1] + cmp[3]) / 2) < threshold:
+                    used[j] = True
+            merged_y = int(round((curr[1] + curr[3]) / 2))
+            merged.append((global_x1, merged_y, global_x2, merged_y))
+            used[i] = True
+
+        return [np.array([line]) for line in merged]
 
     def split_staff_slices(
         self,
